@@ -1,0 +1,29 @@
+/* Base styles for VOWOV */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #14141f;
+    --bg-tertiary: #1e1e2f;
+    --text-primary: #e0e0e8;
+    --text-secondary: #b0b0c0;
+    --accent-gold: #d4af37;
+    --accent-jade: #4a9b9b;
+    --accent-purple: #8b5cf6;
+    --accent-red: #dc2626;
+    --border-color: #2a2a3a;
+    --success: #10b981;
+    --warning: #f59e0b;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}

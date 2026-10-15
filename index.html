@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOWOV - Xianxia Cultivation RPG</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div id="app">
+        <div id="main-menu" class="screen active">
+            <div class="menu-container">
+                <h1 class="game-title">VOWOV</h1>
+                <p class="game-subtitle">Xianxia Cultivation RPG</p>
+                <div class="menu-actions">
+                    <button id="new-game-btn" class="menu-btn">New Game</button>
+                    <button id="continue-game-btn" class="menu-btn" disabled>Continue Game</button>
+                    <button id="load-game-btn" class="menu-btn">Load Game</button>
+                    <button id="settings-btn" class="menu-btn">Settings</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div class="player-info">
+                    <span id="player-name">Name</span> |
+                    <span id="player-realm">Body Tempering</span> |
+                    <span id="player-cultivation">0 / 100 Qi</span>
+                </div>
+                <div class="game-actions">
+                    <button id="save-game-btn" class="action-btn">Save</button>
+                    <button id="menu-btn" class="action-btn">Menu</button>
+                </div>
+            </div>
+
+            <div class="game-main">
+                <nav class="game-nav">
+                    <button class="nav-btn active" data-tab="cultivation">Cultivation</button>
+                    <button class="nav-btn" data-tab="character">Character</button>
+                    <button class="nav-btn" data-tab="exploration">Exploration</button>
+                    <button class="nav-btn" data-tab="inventory">Inventory</button>
+                    <button class="nav-btn" data-tab="encounters">Kỳ Ngộ</button>
+                    <button class="nav-btn" data-tab="settings">Settings</button>
+                </nav>
+
+                <div class="game-content">
+                    <div id="tab-cultivation" class="tab-pane active">
+                        <h2>Cultivation</h2>
+                        <div class="cultivation-info">
+                            <p>Realm: <span id="realm-display">Body Tempering</span></p>
+                            <p>Stage: <span id="stage-display">Early</span></p>
+                            <div class="progress-bar">
+                                <div id="cultivation-progress" class="progress-fill"></div>
+                            </div>
+                            <p id="cultivation-text">0 / 100</p>
+                            <button id="meditate-btn" class="game-btn">Meditate</button>
+                            <button id="breakthrough-btn" class="game-btn" disabled>Attempt Breakthrough</button>
+                        </div>
+                    </div>
+
+                    <div id="tab-character" class="tab-pane">
+                        <h2>Character</h2>
+                        <div class="character-info">
+                            <p>Name: <span id="char-name">Unnamed</span></p>
+                            <p>Spiritual Roots: <span id="char-roots">None</span></p>
+                            <p>Physique: <span id="char-physique">None</span></p>
+                            <p>Age: <span id="char-age">16</span></p>
+                        </div>
+                    </div>
+
+                    <div id="tab-exploration" class="tab-pane">
+                        <h2>Exploration</h2>
+                        <p>Explore the world and discover mysteries.</p>
+                        <button id="explore-btn" class="game-btn">Explore</button>
+                        <div id="exploration-result"></div>
+                    </div>
+
+                    <div id="tab-inventory" class="tab-pane">
+                        <h2>Inventory</h2>
+                        <div id="inventory-list"></div>
+                    </div>
+
+                    <div id="tab-encounters" class="tab-pane">
+                        <h2>Kỳ Ngộ</h2>
+                        <p>Mysterious encounters await the worthy.</p>
+                        <div id="encounter-display"></div>
+                    </div>
+
+                    <div id="tab-settings" class="tab-pane">
+                        <h2>Settings</h2>
+                        <button id="export-save-btn" class="game-btn">Export Save</button>
+                        <button id="import-save-btn" class="game-btn">Import Save</button>
+                        <button id="delete-save-btn" class="game-btn">Delete Save</button>
+                        <input type="file" id="import-file" accept=".json" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

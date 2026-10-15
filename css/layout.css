@@ -1,0 +1,112 @@
+/* Layout styles */
+.screen {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.screen.active {
+    display: block;
+}
+
+#main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, rgba(10, 10, 15, 0.8) 70%);
+}
+
+.menu-container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(20, 20, 31, 0.8);
+    border: 2px solid var(--accent-gold);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.game-title {
+    font-size: 3rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    letter-spacing: 0.2em;
+}
+
+.game-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.game-header {
+    background: var(--bg-secondary);
+    border-bottom: 2px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.player-info {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.game-main {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 60px);
+}
+
+.game-nav {
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.game-content {
+    flex: 1;
+    padding: 1rem;
+    background: var(--bg-primary);
+}
+
+.tab-pane {
+    display: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 2rem;
+    }
+    
+    .game-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .game-nav {
+        justify-content: center;
+    }
+    
+    .tab-pane {
+        padding: 0.5rem;
+    }
+}

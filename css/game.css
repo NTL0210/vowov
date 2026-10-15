@@ -1,0 +1,11 @@
+/* Game-specific styles */
+.game-content h2 {
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 0.25rem;
+}
+
+.game-content h2 {
+    font-size: 1.5rem;
+}

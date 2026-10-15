@@ -1,0 +1,115 @@
+/* Component styles */
+.menu-btn,
+.action-btn,
+.nav-btn,
+.game-btn {
+    padding: 0.5rem 1rem;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.menu-btn:hover:not(:disabled),
+.action-btn:hover:not(:disabled),
+.nav-btn:hover:not(:disabled),
+.game-btn:hover:not(:disabled) {
+    background: var(--bg-secondary);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+.menu-btn:disabled,
+.action-btn:disabled,
+.nav-btn:disabled,
+.game-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.menu-btn {
+    width: 200px;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.nav-btn.active {
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+    border-color: var(--accent-gold);
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.75rem 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-jade));
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.cultivation-info,
+.character-info {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.cultivation-info p,
+.character-info p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+#cultivation-text {
+    text-align: center;
+    color: var(--accent-gold);
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.game-btn {
+    margin: 0.25rem 0.25rem 0.25rem 0;
+}
+
+#exploration-result,
+#encounter-display {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    min-height: 60px;
+    color: var(--text-secondary);
+}
+
+#inventory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inventory-item {
+    background: var(--bg-secondary);
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
