@@ -307,5 +307,11 @@ export class UIManager {
         document.getElementById('char-roots').textContent = this.gameState.player.spiritualRoots;
         document.getElementById('char-physique').textContent = this.gameState.player.physique;
         document.getElementById('char-age').textContent = this.gameState.player.age;
+        const talentsEl = document.getElementById('char-talents');
+        if (talentsEl) {
+            talentsEl.textContent = this.gameState.player.talents && this.gameState.player.talents.length > 0 
+                ? this.gameState.player.talents.join(', ') 
+                : 'None';
+        }
     }
 }
