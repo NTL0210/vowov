@@ -2,6 +2,9 @@
 import { GameState } from './core/GameState.js';
 import { StorageManager } from './storage/StorageManager.js';
 import { CultivationSystem } from './systems/CultivationSystem.js';
+import { EncounterSystem } from './systems/EncounterSystem.js';
+import { InventorySystem } from './systems/InventorySystem.js';
+import { CharacterSystem } from './systems/CharacterSystem.js';
 import { UIManager } from './ui/UIManager.js';
 
 class VOWOV {
@@ -9,10 +12,14 @@ class VOWOV {
         this.gameState = new GameState();
         this.storageManager = new StorageManager();
         this.cultivationSystem = new CultivationSystem(this.gameState);
-        this.uiManager = new UIManager(this.gameState, this.storageManager, this.cultivationSystem);
+        this.encounterSystem = new EncounterSystem(this.gameState);
+        this.inventorySystem = new InventorySystem(this.gameState);
+        this.characterSystem = new CharacterSystem(this.gameState);
+        this.uiManager = new UIManager(this.gameState, this.storageManager, this.cultivationSystem, this.encounterSystem, this.inventorySystem, this.characterSystem);
     }
 
     init() {
+        window.uiManager = this.uiManager;
         this.uiManager.initialize();
         console.log('VOWOV initialized');
     }
