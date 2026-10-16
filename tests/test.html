@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VOWOV Tests</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #111; color: #0f0; }
+        .pass { color: #0f0; }
+        .fail { color: #f00; }
+        .test { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>VOWOV Basic Tests</h1>
+    <div id="results"></div>
+    <script type="module">
+        import { GameState } from '../js/core/GameState.js';
+        import { StorageManager } from '../js/storage/StorageManager.js';
+        import { CultivationSystem } from '../js/systems/CultivationSystem.js';
+        
+        const results = document.getElementById('results');
+        function test(name, fn) {
+            try {
+                fn();
+                results.innerHTML += `<div class="test pass">✓ ${name}</div>`;
+            } catch (e) {
+                results.innerHTML += `<div class="test fail">✗ ${name}: ${e.message}</div>`;
+            }
+        }
+        
+        test('GameState creates new player', () => {
+            const gs = new GameState();
+            gs.createNew('Test');
+            if (gs.player.name !== 'Test') throw new Error('Name not set');
+            if (gs.player.cultivation !== 0) throw new Error('Cultivation should be 0');
+        });
+        
+        test('Cultivation increases on meditate', () => {
+            const gs = new GameState();
+            gs.createNew('Test');
+            const cs = new CultivationSystem(gs);
+            const gain = cs.meditate();
+            if (gain <= 0) throw new Error('No gain');
+            if (gs.player.cultivation !== gain) throw new Error('Cultivation not updated');
+        });
+        
+        test('StorageManager has hasSave method', () => {
+            const sm = new StorageManager();
+            if (typeof sm.hasSave !== 'function') throw new Error('Missing hasSave');
+        });
+        
+        console.log('Tests completed');
+    </script>
+</body>
+</html>
