@@ -13,13 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, rgba(10, 10, 15, 0.8) 70%);
+    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.15) 0%, rgba(10, 10, 15, 0.85) 70%);
 }
 
 .menu-container {
     text-align: center;
     padding: 2rem;
-    background: rgba(20, 20, 31, 0.8);
+    background: rgba(20, 20, 31, 0.85);
     border: 2px solid var(--accent-gold);
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
@@ -84,7 +84,7 @@
 
 .tab-pane {
     display: none;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
