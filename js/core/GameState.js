@@ -26,6 +26,10 @@ export class GameState {
         };
         this.version = '1.0.0';
         this.lastSaveTime = null;
+        this.combat = {
+            inCombat: false,
+            enemy: null
+        };
     }
 
     static generateId() {
@@ -58,6 +62,10 @@ export class GameState {
         };
         this.version = '1.0.0';
         this.lastSaveTime = Date.now();
+        this.combat = {
+            inCombat: false,
+            enemy: null
+        };
         return this;
     }
 
